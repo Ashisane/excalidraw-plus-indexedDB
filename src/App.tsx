@@ -167,8 +167,45 @@ function App() {
     return (
       <div className="canvas-selector">
         <div className="selector-header">
-          <h1>Select a Canvas</h1>
-          <p>Choose an existing canvas or create a new one</p>
+          <h1>Excalidraw Plus Local</h1>
+          <p className="subtitle">Multiple canvas support with local storage - No online collaboration</p>
+        </div>
+
+        <div className="info-section">
+          <div className="info-card">
+            <div className="info-icon">✨</div>
+            <div className="info-content">
+              <h3>What is this?</h3>
+              <p>This is Excalidraw Plus with multiple canvas management, powered by local browser storage. Create, save, and organize multiple drawings - all stored offline in your browser.</p>
+            </div>
+          </div>
+
+          <div className="info-card warning-card">
+            <div className="info-icon">⚠️</div>
+            <div className="info-content">
+              <h3>Important: Your Data is Stored Locally</h3>
+              <p><strong>Do NOT clear your browser data or IndexedDB</strong> - this will permanently delete all your canvases. Your drawings are saved only in this browser on this device. No cloud backup or online collaboration.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="features-grid">
+          <div className="feature-item">
+            <span className="feature-icon">🎨</span>
+            <span>Multiple Canvases</span>
+          </div>
+          <div className="feature-item">
+            <span className="feature-icon">💾</span>
+            <span>Auto-save (Ctrl+S)</span>
+          </div>
+          <div className="feature-item">
+            <span className="feature-icon">📝</span>
+            <span>Rename on-the-fly</span>
+          </div>
+          <div className="feature-item">
+            <span className="feature-icon">🌙</span>
+            <span>Dark/Light Mode</span>
+          </div>
         </div>
 
         <div className="canvas-grid">
