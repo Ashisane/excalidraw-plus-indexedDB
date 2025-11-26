@@ -1,0 +1,309 @@
+/* Canvas Selector Screen - Excalidraw Inspired Minimal Design */
+.canvas-selector {
+  width: 100vw;
+  height: 100vh;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  overflow-y: auto;
+}
+
+.selector-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.selector-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #1b1b1f;
+  font-family: Assistant, system-ui, sans-serif;
+}
+
+.selector-header p {
+  font-size: 1rem;
+  margin: 0;
+  color: #6c757d;
+  font-family: Assistant, system-ui, sans-serif;
+}
+
+.canvas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Canvas Card */
+.canvas-card {
+  position: relative;
+  background: white;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.canvas-card:hover {
+  border-color: #6965db;
+  box-shadow: 0 2px 8px rgba(105, 101, 219, 0.1);
+}
+
+/* Delete Button - now inline with timestamp */
+.delete-button {
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.delete-button:hover {
+  background: #fee;
+  color: #dc3545;
+}
+
+/* +New Card */
+.new-canvas-card {
+  border: 2px dashed #d0d0d0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.new-canvas-card:hover {
+  background: #f8f9fa;
+  border-color: #6965db;
+}
+
+.new-canvas-icon {
+  font-size: 3rem;
+  color: #6965db;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.new-canvas-card:hover .new-canvas-icon {
+  transform: scale(1.1);
+}
+
+.new-canvas-card .canvas-name {
+  color: #6965db;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: Assistant, system-ui, sans-serif;
+}
+
+/* Canvas Preview */
+.canvas-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.canvas-icon {
+  width: 60px;
+  height: 60px;
+  color: #6965db;
+  opacity: 0.6;
+}
+
+/* Canvas Info */
+.canvas-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.canvas-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1b1b1f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Assistant, system-ui, sans-serif;
+}
+
+/* Container for timestamp and delete button */
+.canvas-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.canvas-timestamp {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-family: Assistant, system-ui, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .canvas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selector-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Existing Excalidraw Editor Styles */
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* Filename input with EXACT Excalidraw button styles */
+.filename-container {
+  position: absolute;
+  top: 16px;
+  left: 69px;
+  z-index: 999;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Home Button */
+.home-button {
+  font-family: Assistant, system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13.33px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 12px;
+  height: 36px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+  background-color: rgb(236, 236, 244);
+  color: rgb(27, 27, 31);
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px;
+}
+
+.home-button:hover {
+  background-color: rgb(220, 220, 230);
+}
+
+/* Dark mode for home button */
+.theme--dark .home-button,
+body.theme--dark .home-button,
+.excalidraw.theme--dark~.app-container .home-button,
+.app-container:has(.excalidraw.theme--dark) .home-button {
+  background-color: rgb(35, 35, 41);
+  color: rgb(227, 227, 232);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px;
+}
+
+.theme--dark .home-button:hover,
+body.theme--dark .home-button:hover,
+.excalidraw.theme--dark~.app-container .home-button:hover,
+.app-container:has(.excalidraw.theme--dark) .home-button:hover {
+  background-color: rgb(45, 45, 51);
+}
+
+.filename-display,
+.filename-input {
+  /* Remove all default input styling */
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Exact styles from Excalidraw button */
+  font-family: Assistant, system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13.33px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
+  height: 36px;
+  border-radius: 8px;
+  border: 0;
+  cursor: text;
+  min-width: 60px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+/* Light mode colors (default) */
+.filename-display {
+  background-color: rgb(236, 236, 244);
+  color: rgb(27, 27, 31);
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px;
+}
+
+.filename-display:hover {
+  background-color: rgb(220, 220, 230);
+}
+
+.filename-input {
+  background-color: rgb(236, 236, 244);
+  color: rgb(27, 27, 31);
+  box-shadow: rgb(105, 101, 219) 0px 0px 0px 2px;
+  min-width: 100px;
+}
+
+.filename-input:focus {
+  outline: none;
+  box-shadow: rgb(105, 101, 219) 0px 0px 0px 2px;
+}
+
+/* Dark mode colors - multiple selectors to ensure it works */
+.theme--dark .filename-display,
+body.theme--dark .filename-display,
+.excalidraw.theme--dark~.app-container .filename-display,
+.app-container:has(.excalidraw.theme--dark) .filename-display {
+  background-color: rgb(35, 35, 41);
+  color: rgb(227, 227, 232);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px;
+}
+
+.theme--dark .filename-display:hover,
+body.theme--dark .filename-display:hover,
+.excalidraw.theme--dark~.app-container .filename-display:hover,
+.app-container:has(.excalidraw.theme--dark) .filename-display:hover {
+  background-color: rgb(45, 45, 51);
+}
+
+.theme--dark .filename-input,
+body.theme--dark .filename-input,
+.excalidraw.theme--dark~.app-container .filename-input,
+.app-container:has(.excalidraw.theme--dark) .filename-input {
+  background-color: rgb(35, 35, 41);
+  color: rgb(227, 227, 232);
+  box-shadow: rgb(105, 101, 219) 0px 0px 0px 2px;
+}
+
+.theme--dark .filename-input:focus,
+body.theme--dark .filename-input:focus,
+.excalidraw.theme--dark~.app-container .filename-input:focus,
+.app-container:has(.excalidraw.theme--dark) .filename-input:focus {
+  box-shadow: rgb(105, 101, 219) 0px 0px 0px 2px;
+}
